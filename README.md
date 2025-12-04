@@ -3,6 +3,7 @@
 ## 项目简介
 
 这是一个基于微信小程序开发的无人船(USV)实时监控系统，主要用于显示无人船的GPS实时位置和激光雷达点云数据。
+![alt text](image.png)![alt text](image-1.png)![alt text](image-2.png)
 
 ## 功能特点
 
