@@ -1,0 +1,286 @@
+/* monitor.wxss */
+/* 现代化科技感主题样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+  min-height: 100vh;
+  padding: 20rpx;
+  box-sizing: border-box;
+  color: #e6f7ff;
+}
+
+/* 地图容器 */
+.map-container {
+  width: 100%;
+  height: 400rpx;
+  background: rgba(10, 25, 47, 0.8);
+  border-radius: 20rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 200, 255, 0.1);
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  border: 1rpx solid rgba(0, 200, 255, 0.2);
+  backdrop-filter: blur(10rpx);
+}
+
+.map-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #64ffda;
+  padding: 20rpx;
+  border-bottom: 1rpx solid rgba(0, 200, 255, 0.2);
+  background: rgba(10, 25, 47, 0.9);
+}
+
+.map {
+  width: 100%;
+  height: calc(100% - 80rpx);
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+}
+
+/* GPS信息卡片 */
+.gps-card {
+  width: 100%;
+  background: rgba(10, 25, 47, 0.8);
+  border-radius: 20rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 200, 255, 0.1);
+  margin-bottom: 20rpx;
+  padding: 24rpx;
+  box-sizing: border-box;
+  border: 1rpx solid rgba(0, 200, 255, 0.2);
+  backdrop-filter: blur(10rpx);
+}
+
+.card-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #64ffda;
+  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.gps-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24rpx;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 12rpx);
+  margin-bottom: 16rpx;
+  padding: 16rpx;
+  background: rgba(10, 25, 47, 0.6);
+  border-radius: 12rpx;
+  border: 1rpx solid rgba(0, 200, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* 全宽信息项 */
+.info-item.full-width {
+  width: 100%;
+  margin-bottom: 8rpx;
+}
+
+.info-item:hover {
+  background: rgba(10, 25, 47, 0.8);
+  border-color: rgba(0, 200, 255, 0.3);
+  transform: translateY(-2rpx);
+  box-shadow: 0 4rpx 16rpx rgba(0, 200, 255, 0.15);
+}
+
+.info-label {
+  font-size: 26rpx;
+  color: #8892b0;
+  margin-bottom: 8rpx;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 30rpx;
+  color: #e6f7ff;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+/* 激光雷达区域 */
+.lidar-section {
+  width: 100%;
+  background: rgba(10, 25, 47, 0.8);
+  border-radius: 20rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 200, 255, 0.1);
+  padding: 24rpx;
+  box-sizing: border-box;
+  border: 1rpx solid rgba(0, 200, 255, 0.2);
+  backdrop-filter: blur(10rpx);
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #64ffda;
+  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+/* 激光雷达信息 */
+.lidar-info {
+  margin-bottom: 24rpx;
+}
+
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.stats-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24rpx;
+  padding-top: 24rpx;
+  border-top: 1rpx solid rgba(0, 200, 255, 0.2);
+}
+
+/* Canvas容器 */
+.canvas-container {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(10, 25, 47, 0.6);
+  padding: 20rpx;
+  border-radius: 16rpx;
+  border: 1rpx solid rgba(0, 200, 255, 0.1);
+  box-sizing: border-box;
+}
+
+.canvas-title {
+  font-size: 30rpx;
+  color: #8892b0;
+  margin-bottom: 16rpx;
+  align-self: flex-start;
+  font-weight: 500;
+  width: 100%;
+}
+
+.point-cloud-canvas {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(circle at center, #0a192f 0%, #112240 50%, #0a192f 100%);
+  border: 2rpx solid rgba(0, 200, 255, 0.2);
+  border-radius: 12rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 200, 255, 0.15);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.point-cloud-canvas:hover {
+  box-shadow: 0 12rpx 36rpx rgba(0, 200, 255, 0.25);
+  transform: translateY(-4rpx);
+}
+
+/* 响应式设计 */
+/* 大屏设备（平板及以上） */
+@media (min-width: 1024rpx) {
+  .container {
+    padding: 40rpx;
+  }
+  
+  .map-container {
+    height: 500rpx;
+  }
+  
+  .point-cloud-canvas {
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+  
+  .info-item {
+    width: calc(33.33% - 16rpx);
+  }
+}
+
+/* 中等屏幕设备（手机横屏） */
+@media (max-width: 1023rpx) and (min-width: 769rpx) {
+  .info-item {
+    width: calc(33.33% - 16rpx);
+  }
+}
+
+/* 小屏设备（手机竖屏） */
+@media (max-width: 768rpx) {
+  .container {
+    padding: 16rpx;
+  }
+  
+  .map-container, .gps-card, .lidar-section {
+    margin-bottom: 16rpx;
+    padding: 16rpx;
+  }
+  
+  .info-item {
+    width: 100%;
+  }
+  
+  /* 小屏设备下Canvas样式已在主样式中统一处理 */
+  
+  /* 缩小字体大小 */
+.map-title, .card-title, .section-title {
+  font-size: 28rpx;
+}
+
+
+  
+  .info-label {
+    font-size: 24rpx;
+  }
+  
+  .info-value {
+    font-size: 26rpx;
+  }
+  
+  .canvas-title {
+    font-size: 26rpx;
+  }
+}
+
+/* 超小屏设备 */
+@media (max-width: 480rpx) {
+  .map-container {
+    height: 300rpx;
+  }
+  
+  .point-cloud-canvas {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* 动画效果 */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 200, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20rpx rgba(0, 200, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 200, 255, 0);
+  }
+}
+
+.map-container:hover, .gps-card:hover, .lidar-section:hover {
+  animation: pulse 1.5s infinite;
+}

@@ -1,0 +1,107 @@
+<!--monitor.wxml-->
+<view class="container">
+  <!-- 百度地图容器 -->
+  <view class="map-container">
+    <view class="map-title">GPS实时定位</view>
+    <map 
+      id="map" 
+      class="map" 
+      longitude="{{gpsData.longitude}}" 
+      latitude="{{gpsData.latitude}}" 
+      scale="18" 
+      markers="{{markers}}" 
+      show-location 
+      bindload="onMapLoad"
+    ></map>
+  </view>
+
+  <!-- GPS信息卡片 -->
+  <view class="gps-card">
+    <view class="card-title">GPS 信息</view>
+    <view class="gps-info">
+      <view class="info-item">
+        <text class="info-label">时间:</text>
+        <text class="info-value">{{gpsData.time}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">纬度:</text>
+        <text class="info-value">{{gpsData.latitude}} {{gpsData.latDir}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">经度:</text>
+        <text class="info-value">{{gpsData.longitude}} {{gpsData.lonDir}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">高度:</text>
+        <text class="info-value">{{gpsData.altitude}} M</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">卫星数:</text>
+        <text class="info-value">{{gpsData.satellites}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">定位状态:</text>
+        <text class="info-value">{{gpsData.status}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">HDOP:</text>
+        <text class="info-value">{{gpsData.hdop}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 激光雷达信息 -->
+  <view class="lidar-section">
+    <view class="section-title">激光雷达信息</view>
+    
+    <!-- 雷达基本信息 -->
+    <view class="lidar-info">
+      <view class="info-row">
+        <view class="info-item">
+          <text class="info-label">N:</text>
+          <text class="info-value">{{lidarData.N}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">RPM:</text>
+          <text class="info-value">{{lidarData.rpm}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">时间:</text>
+          <text class="info-value">{{lidarStats.formattedTime}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">CRC:</text>
+          <text class="info-value">{{lidarData.crc}}</text>
+        </view>
+      </view>
+      <view class="info-row">
+        <view class="info-item full-width">
+          <text class="info-label">原始时间戳:</text>
+          <text class="info-value">{{lidarData.timestamp}}</text>
+        </view>
+      </view>
+      
+      <!-- 统计信息 -->
+      <view class="stats-info">
+        <view class="info-item">
+          <text class="info-label">有效点数量:</text>
+          <text class="info-value">{{lidarStats.validPoints}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">最大距离:</text>
+          <text class="info-value">{{lidarStats.maxDistance}} mm</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">最小距离:</text>
+          <text class="info-value">{{lidarStats.minDistance}} mm</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 点云绘制Canvas -->
+    <view class="canvas-container">
+      <view class="canvas-title">激光雷达点云 (栅格地图)</view>
+      <canvas type="2d" id="pointCloud" class="point-cloud-canvas" bindtouchstart="onCanvasTouch"></canvas>
+    </view>
+  </view>
+</view>
